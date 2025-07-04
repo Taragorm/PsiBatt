@@ -33,7 +33,7 @@ static const uint16_t battmV_[] = {
     4200  // 100%
 };    
 //-----------------------------------------------
-int LiPomvToPercent(uint16_t mv)
+int LiPoMvToPercent(uint16_t mv)
 {
     if(mv<=battmV_[0])
         return 0;
