@@ -57,10 +57,17 @@ int LiPoMvToPercent(uint16_t mv)
     auto mvresidue = mv - lb;
     
     // to nearest percent is fine here
-    return 
+    auto ret = 
         (grix-1)*10
         + (mvresidue + mvresidue/2) / mvPerPercent
         ;
+
+    if(ret>100)
+        ret = 100;
+    if(ret<0)
+        ret = 0;
+        
+    return ret;
 }
 //-----------------------------------------------
     
